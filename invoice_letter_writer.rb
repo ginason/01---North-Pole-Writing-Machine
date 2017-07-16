@@ -15,6 +15,8 @@ kids_data.each_line do |kid|
     house_value = kid_data_array[13].to_i
 
     total_toy = 0
+    toy_hash = {}
+    defective_toy = 500
 
     if house_value > 1000000
       toys.each do |toy|
@@ -25,8 +27,9 @@ kids_data.each_line do |kid|
           toy_price = 1000
           total_toy += toy_price
        end
+       toy_hash[toy]=toy_price
       end
-    elsif house_value >= 200000 && house_value <= 1000000
+    elsif house_value > 200000 && house_value <= 1000000
       toys.each do |toy|
         if toy == 'Kaleidoscope'
            toy_price = 0
@@ -35,12 +38,9 @@ kids_data.each_line do |kid|
            toy_price =100
            total_toy += toy_price
          end
+         toy_hash[toy]=toy_price
       end
-    elsif house_value < 200000
-      toy_price = 0
-      toys.each do |toy|
-        toy_price = 0
-      end
+
     end
 
       filename    = 'letters/invoices/' + name + '.txt'
@@ -49,6 +49,13 @@ kids_data.each_line do |kid|
       puts "Writing #{filename}."
       File.write(filename, letter_text)
 end
+
+# elsif house_value < 200000
+#   toy_price = 0
+#   toys.each do |toy|
+#     toy_price = 0
+#   end
+
 
 # toys.each do |toy|
 #   if toy == 'Kaleidoscope'
@@ -72,3 +79,25 @@ end
 # end
 #
 puts 'Done!'
+
+
+# <% if house_value > 1000000 %>
+# <% toys.each do |toy| -%>
+# <%if toy == 'Kaleidoscope' %>
+# <%    toy_price = 0 %>
+# <%   else%>
+# <%    toy_price = 1000%>
+# <% end%>
+#   <%= toy %> : $<%= toy_price %>
+# <% end -%>
+# <% elsif house_value >= 200000 && house_value <= 1000000 %>
+# <% toys.each do |toy| -%>
+# <%if toy == 'Kaleidoscope' %>
+# <%    toy_price = 0 %>
+# <%   else%>
+# <%    toy_price = 100%>
+# <% end%>
+#   <%= toy %> : $<%= toy_price %>
+# <% end -%>
+#
+# <% end -%> -->

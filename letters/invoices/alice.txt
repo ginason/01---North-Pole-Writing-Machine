@@ -18,29 +18,17 @@ alice's Toy Order
 =================
 
 
+Monopoly : $100
 
+Batman : $100
 
-  Monopoly : $100
+Kaleidoscope : $0
 
+Skates : $100
 
+Slinky : $100
 
-  Batman : $100
-
-
-
-  Kaleidoscope : $0
-
-
-
-  Skates : $100
-
-
-
-  Slinky : $100
-
-
-
-  Transformers : $100
+Transformers : $100
 
 ----
 $500  Subtotal
@@ -58,3 +46,5 @@ Guido the Elf,
 Collections Department
 Santa's Village
 
+
+{"Monopoly"=>100, "Batman"=>100, "Kaleidoscope"=>0, "Skates"=>100, "Slinky"=>100, "Transformers"=>100}
